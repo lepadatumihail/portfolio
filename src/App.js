@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+//import pages
+import AboutUs from "../src/pages/AboutUs";
+import Nav from "./components/Nav";
+import Work from "./pages/Work";
+import Contact from "./pages/Contact";
+import Details from "./pages/Details";
+import Footer from "./components/Footer";
+
+// Global Style
+import GlobalStyle from "./components/GlobalStyle";
+// Router
+import { Switch, Route, useLocation } from "react-router-dom";
+//Animation
+import { AnimatePresence } from "framer-motion";
+import ScrollTop from "./components/ScrollTop";
+import ParticleBackground from "./particles/particleBack";
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <ParticleBackground/> */}
+
+      <GlobalStyle />
+      <Nav />
+      <AnimatePresence exitBeforeEnter>
+        <ScrollTop />
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact>
+            <AboutUs />
+          </Route>
+
+          <Route path="/work" exact>
+            <Work />
+          </Route>
+
+          <Route path="/work/:id">
+            <Details />
+          </Route>
+
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </AnimatePresence>
+      <Footer />
     </div>
   );
 }
