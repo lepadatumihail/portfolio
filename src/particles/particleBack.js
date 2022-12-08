@@ -1,85 +1,78 @@
 import React from "react";
-import Particles from 'react-tsparticles';
-
+import Particles from "react-tsparticles";
 
 export default function ParticleBackground() {
-    return(
-        <Particles id="tsparticles"
-        style={{position:'fixed',zIndex:2}}
-        options={{
-          
-          fpsLimit: 60,
-          interactivity: {
-            detectsOn: "canvas",
-            events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-              resize: true,
+  return (
+    <Particles
+      id="tsparticles"
+      style={{ position: "fixed", zIndex: 2 }}
+      options={{
+        fpsLimit: 60,
+        interactivity: {
+          detectsOn: "canvas",
+          events: {
+            onClick: {
+              enable: true,
+              mode: "push",
             },
-            modes: {
-              bubble: {
-                distance: 10,
-                duration: 2,
-                opacity: 0.8,
-                size: 20,
-              },
-              push: {
-                quantity: 3,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
+            onHover: {
+              enable: true,
+              mode: "repulse",
             },
+            resize: true,
           },
-          particles: {
-            color: {
-              value: "#818181",
+          modes: {
+            bubble: {
+              distance: 10,
+              duration: 2,
+              opacity: 0.8,
+              size: 20,
             },
-            links: {
-              color: "#dddddd",
+            push: {
+              quantity: 4,
+            },
+            repulse: {
               distance: 100,
-              enable: true,
-              opacity: 0.3,
-              width: 1,
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outMode: "bounce",
-              random: true,
-              speed: 0.5,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                value_area: 900,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: 0.8,
-            },
-            shape: {
-              type: "triangle",
-            },
-            size: {
-              random: true,
-              value: 5,
+              duration: 0.4,
             },
           },
-          detectRetina: true,
-        }}
-      />
-    );
+        },
+        particles: {
+          color: {
+            value: "#38fffc",
+          },
+
+          collisions: {
+            enable: false,
+          },
+          move: {
+            direction: "none",
+            enable: true,
+            outMode: "bounce",
+            random: false,
+            speed: 0.7,
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+              value_area: 1000,
+            },
+            value: 30,
+          },
+          opacity: {
+            value: 0.2,
+          },
+          shape: {
+            type: "circle",
+          },
+          size: {
+            random: true,
+            value: 5,
+          },
+        },
+        detectRetina: true,
+      }}
+    />
+  );
 }

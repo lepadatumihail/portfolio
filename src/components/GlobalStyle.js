@@ -1,5 +1,5 @@
-import {createGlobalStyle} from 'styled-components';
-import '../index.css';
+import { createGlobalStyle } from "styled-components";
+import "../index.css";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -31,6 +31,7 @@ button{
     cursor:pointer;
     padding :1rem 2rem;
     border: 3px solid #23d997;
+    border-radius:6px;
     background: transparent;
     color:white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
