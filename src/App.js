@@ -18,8 +18,8 @@ import ParticleBackground from "./particles/particleBack";
 function App() {
   const location = useLocation();
   return (
-    <div className="App">
-      <ParticleBackground/>
+    <div className="App" style={{ overflow: "hidden" }}>
+      <ParticleBackground />
 
       <GlobalStyle />
       <Nav />

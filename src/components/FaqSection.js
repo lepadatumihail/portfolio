@@ -6,7 +6,9 @@ import { About } from "../styles";
 import styled from "styled-components";
 import Toggle from "./Toggle";
 import { AnimateSharedLayout } from "framer-motion";
-import { ScrollReveal } from "../animation.js";
+import { imgRot, ScrollReveal } from "../animation.js";
+import { motion } from "framer-motion";
+import Home1 from "../img/me-me.png";
 
 const FaqSection = () => {
   const [element, controls] = UseScroll();
@@ -17,24 +19,50 @@ const FaqSection = () => {
       initial="hidden"
       ref={element}
     >
-      <h2 style={{ display: "flex", flexDirection: "row" }}>
-        <Spanny>About Me</Spanny>
-      </h2>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <motion.img variants={imgRot} src={Home1} alt="portrait" />
 
-      <AnimateSharedLayout style={{ zIndex: "4" }}>
+        <h2
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Spanny>About Me</Spanny>
+        </h2>
+      </div>
+
+      <AnimateSharedLayout style={{ zIndex: "4", flexDirection: "column" }}>
         <Toggle title="General Information">
           <div className="answer">
             <p>
-              Hi, I'm Mihail, a 24 years old student from Moldova, Chisinau. I
-              came to Netherlands through a wonderfull nomadic experience from
-              my last 4 years, after starting a new life in Romania, and further
-              on in UK, Southampton. Always moving, evolving and adjusting to
-              the new environments and cultures.
+              I'm Mihail, a 24 years old student at Fontys University in
+              Eindhoven. Currently I am in my 4th year and looking for an
+              Internship Graduation assignment in Software Engineering. I came
+              to Netherlands almost 4 years ago after trying to start my studies
+              in both Romania and England. I manage to adapt to new environments
+              in a short amount of time as I am always eager to learn more about
+              places, people, cultures, traditions and food ❤️.
+            </p>
+            <p>
+              I do believe I am a rational person with a direct logical
+              thinking, but I am also an extrovert who gains energy from social
+              gathernings while being opened not only to learn new frameworks
+              and technologies, but to discover people and cultures as well.
             </p>
           </div>
         </Toggle>
 
-        <Toggle title="Education">
+        {/* <Toggle title="Education">
           <div className="answer">
             <p>
               {" "}
@@ -56,29 +84,23 @@ const FaqSection = () => {
               love it. So for now I am still in my seeking phase of life.
             </p>
           </div>
-        </Toggle>
+        </Toggle> */}
 
         <Toggle title="Programming">
           <div className="answer">
             <p>
               {" "}
-              I love C# and Object Orineted Programming because there is no
+              My background started with C++ back in high school. That was my
+              starting point in my software engineering journey. It helped me
+              realize that IT is all about logic, and hard work obviously ☺. I
+              love C# and Object Orineted Programming because there is no
               'correct way' of doing a specific task. Everyone can get the same
               result but with different code. The knowledge that I recieved
               during the study years from developing databases in SQL, creating
-              Windows Form Applications in C#, mobile apps with Kotlin and Swift
+              Windows Form Applications in C#, mobile apps with Kotlin and
+              Swift, web applications with React, Bootrstrap, Angular, Laravel,
               made me realise that the more I learn, the more there is to be
-              learned. This portfolio was created from scratch with almost 0
-              knowledge of how to use React, but at the end of the day it's
-              about determination and of course experience. I realised that
-              every programming language has somethng new to offer, so for now I
-              just love being creative.
-            </p>
-            <p>
-              I do believe I am a rational person with a direct logical
-              thinking, but I am also an extrovert who gains energy from social
-              gathernings while being opened not only to learn new frameworks
-              and technologies, but to discover people and cultures as well.
+              learned.
             </p>
           </div>
         </Toggle>
@@ -91,6 +113,13 @@ const Faq = styled(About)`
   display: block;
   position: relative;
   z-index: 4;
+  margin-top: -50px;
+  img {
+    width: 50%;
+    @media (min-width: 800px) {
+      width: 25%;
+    }
+  }
   span {
     display: block;
   }
@@ -141,7 +170,7 @@ const Spanny = styled.span`
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 200px;
+  line-height: 50px;
 `;
 
 export default FaqSection;

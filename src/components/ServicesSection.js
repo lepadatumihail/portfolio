@@ -2,11 +2,7 @@ import React from "react";
 import { UseScroll } from "./UseScroll";
 
 //Images
-import clock from "../img/clock.svg";
-import teamwork from "../img/teamwork.svg";
-import diaphragm from "../img/diaphragm.svg";
-import money from "../img/money.svg";
-import home2 from "../img/widgy-2.png";
+import home2 from "../img/widgy-1.png";
 import "../index.css";
 
 //Styled Components
@@ -26,52 +22,31 @@ const ServicesSection = () => {
     >
       <Description style={{ zIndex: -1 }}>
         <h2>
-          <span style={{ fontFamily: "Halfomania" }}>Strong Points</span>
+          <Spanny style={{ fontFamily: "Halfomania" }}>
+            Languages and Frameworks
+          </Spanny>
         </h2>
-
-        <Cards>
-          <Card>
-            <div className="icon">
-              <img src={clock} alt="icon" />
-              <h3>Efficient</h3>
-            </div>
-            <p>Working calmly under pressure.</p>
-          </Card>
-
-          <Card>
-            <div className="icon">
-              <img src={money} alt="icon" />
-              <h3>Worthy</h3>
-            </div>
-            <p>The enthusiasm and attitude will pay off.</p>
-          </Card>
-
-          <Card>
-            <div className="icon">
-              <img src={diaphragm} alt="icon" />
-              <h3>Adaptable</h3>
-            </div>
-            <p>Switched 4 countries in last 4 years.</p>
-          </Card>
-
-          <Card>
-            <div className="icon">
-              <img src={teamwork} alt="icon" />
-              <h3>Social</h3>
-            </div>
-            <p>Good flow of emotional intelligence.</p>
-          </Card>
-        </Cards>
       </Description>
 
-      <img id="skillz" src={home2} alt="portrait" />
+      <img src={home2} id="logoZ" alt="portrait" />
     </Services>
   );
 };
 
+const Spanny = styled.span`
+  font-weight: normal;
+  font-family: Halfomania, sans-serif;
+  //background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
+  background: linear-gradient(100deg, #20ffde, #9661f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
 const Services = styled(About)`
   display: flex;
   flex-direction: row;
+
   h2 {
     padding-bottom: 4rem;
   }
@@ -84,20 +59,18 @@ const Services = styled(About)`
     font-size: 6rem;
     font-weight: normal;
   }
+  img {
+    width: 100%;
+    @media (min-width: 800px) {
+      width: 60%;
+    }
+  }
 
   @media (max-width: 1900px) {
     flex-direction: row;
-    #skillz {
-      width: 80vh;
-      padding-left: 1rem;
-    }
   }
   @media (max-width: 800px) {
     flex-direction: column;
-    #skillz {
-      width: 60vh;
-      padding-left: 1rem;
-    }
   }
 `;
 

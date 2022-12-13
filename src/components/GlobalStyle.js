@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 html{
     @media (max-width: 1750px){
@@ -20,7 +21,7 @@ body{
     background: linear-gradient( #000000 0%, #00061a 60%,  #0a001a 100%); 
     //background: linear-gradient(180deg,#0c2a34,#24394a,#24394a,#614963,#985777,#b85772,#be4668,#db4771);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    overflow-x: hidden;
+   
 }
 
 button{
