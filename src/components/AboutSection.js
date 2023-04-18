@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Home1 from "../img/logo1.png";
+import Gato from "../img/gato.jpg";
 import { titleAnim, Fade, imgRot } from "../animation.js";
 import Wave from "../components/Wave";
 import pdf from "../img/work/cv.pdf";
@@ -15,12 +16,12 @@ const AboutSection = () => {
         <motion.div>
           <Hide>
             <motion.h2 variants={titleAnim}>
-              <span>Welcome</span> to my story,{" "}
+              <span>I love you</span> weirdo,{" "}
             </motion.h2>
           </Hide>
           <Hide>
             <motion.h2 variants={titleAnim}>
-              my work and my <span>virtual</span> portfolio.
+              for your cuteness, <span>smile and </span> kindness.
             </motion.h2>
           </Hide>
 
@@ -30,23 +31,16 @@ const AboutSection = () => {
         </motion.div>
 
         <motion.p variants={Fade}>
-          I'm Mihail Lepadatu, a software engineering student at Fontys
-          University, based in Eindhoven, who loves creating interactive
-          websites and applications.{" "}
+          I always do, even tho i might not say it enough.{" "}
         </motion.p>
-
-        <a href={pdf} target="_blank" style={{ zIndex: 3 }} rel="noreferrer">
-          {" "}
-          <motion.button variants={Fade}>Open Resume / CV</motion.button>
-        </a>
       </Description>
 
       <Image style={{ position: "relative", zIndex: -1 }}>
         <motion.img
           id="logoM"
           variants={imgRot}
-          style={{ height: "28vh" }}
-          src={Home1}
+          style={{ height: "78vh" }}
+          src={Gato}
           alt="portrait"
         />
       </Image>

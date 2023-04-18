@@ -12,8 +12,8 @@ const AboutUs = () => {
     return (
         <motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <AboutSection/>
-            <ServicesSection/>
-            <FaqSection/>        
+            {/* <ServicesSection/>
+            <FaqSection/>         */}
             
         </motion.div>
     )
