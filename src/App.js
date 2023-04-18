@@ -30,14 +30,6 @@ function App() {
             <AboutUs />
           </Route>
 
-          <Route path="/work" exact>
-            <Work />
-          </Route>
-
-          <Route path="/work/:id">
-            <Details />
-          </Route>
-
           <Route path="/contact">
             <Contact />
           </Route>
